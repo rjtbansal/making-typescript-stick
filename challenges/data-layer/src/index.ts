@@ -43,9 +43,9 @@ type DataStoreMethods = {
   ) => DataEntityMap[Key]; // add<Key> => addMovie, addSong
 };
 
-// continueee.. implement this class and also define isDefined method (timestamp around 8th min mark of video: https://frontendmasters.com/courses/typescript-practice/typed-data-store-solution/)
 export class DataStore implements DataStoreMethods {
   // # means field is private. Below data is private field and cannot be accessed by outside objects. We will provide methods to be accessible
+  // Record<Keys, Type> https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
   #data: { [Key in keyof DataEntityMap]: Record<string, DataEntityMap[Key]> } =
     {
       movie: {},
